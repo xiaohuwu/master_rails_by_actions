@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170216073235) do
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "user_id"
     t.string   "address_type"
     t.string   "contact_name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["user_id", "address_type"], name: "index_addresses_on_user_id_and_address_type", using: :btree
   end
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string   "title"
     t.integer  "weight",           default: 0
     t.integer  "products_counter", default: 0
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["title"], name: "index_categories_on_title", using: :btree
   end
 
-  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "user_id"
     t.integer  "product_id"
     t.integer  "address_id"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["user_id"], name: "index_orders_on_user_id", using: :btree
   end
 
-  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "user_id"
     t.string   "payment_no"
     t.string   "transaction_no"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["user_id"], name: "index_payments_on_user_id", using: :btree
   end
 
-  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "product_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "product_id"
     t.integer  "weight",             default: 0
     t.string   "image_file_name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["product_id"], name: "index_product_images_on_product_id", using: :btree
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "category_id"
     t.string   "title"
     t.string   "status",                                             default: "off"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["uuid"], name: "index_products_on_uuid", unique: true, using: :btree
   end
 
-  create_table "shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "shopping_carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "user_id"
     t.string   "user_uuid"
     t.integer  "product_id"
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["user_uuid"], name: "index_shopping_carts_on_user_uuid", using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string   "email"
     t.string   "crypted_password"
     t.string   "salt"
@@ -134,7 +134,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.index ["uuid"], name: "index_users_on_uuid", unique: true, using: :btree
   end
 
-  create_table "verify_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "verify_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.string   "token"
     t.string   "cellphone"
     t.datetime "expired_at"

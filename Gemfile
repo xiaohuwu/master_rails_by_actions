@@ -1,4 +1,4 @@
-source 'https://ruby.taobao.org'
+source 'https://rubygems.org/'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -36,6 +36,9 @@ gem 'rest-client', '~> 1.7.3'
 gem 'loofah', '~> 2.2.1'
 gem 'nokogiri', '~> 1.8.1'
 gem 'paperclip', '~> 5.2.0'
+gem 'mimemagic', '~> 0.3.10'
+gem 'ffi', '~> 1.9', '>= 1.9.24'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
