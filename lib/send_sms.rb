@@ -1,7 +1,7 @@
 module SendSMS
   class << self
 
-    MESSAGE_SUFFIX = "【蛋人商城】"
+    MESSAGE_SUFFIX = "【必顾商城】"
 
     SMS_API_KEY = ENV['SMS_API_KEY']
     SMS_SEND_URL = "https://sms-api.luosimao.com/v1/send.json"

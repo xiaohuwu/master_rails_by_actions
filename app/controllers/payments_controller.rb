@@ -96,9 +96,9 @@ class PaymentsController < ApplicationController
       "anti_phishing_key" => "",
       "exter_invoke_ip" => "",
       "out_trade_no" => payment.payment_no,
-      "subject" => "蛋人商城商品购买",
+      "subject" => "必顾商城商品购买",
       "total_fee" => payment.total_money,
-      "body" => "蛋人商城商品购买",
+      "body" => "必顾商城商品购买",
       "_input_charset" => "utf-8",
       "sign_type" => 'MD5',
       "sign" => ""
