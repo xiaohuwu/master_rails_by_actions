@@ -26,8 +26,7 @@
     })
 
     return false;
-  })
-  .on('ajax:success', '.address-form', function(e, data) {
+  }).on('ajax:success', '.address-form', function(e, data) {
     if (data.status == 'ok') {
       $('#address_form_modal').modal('hide');
       $('#address_list').html(data.data);

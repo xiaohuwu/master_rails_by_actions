@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216073235) do
+ActiveRecord::Schema.define(version: 20241017065828) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3" do |t|
     t.integer  "user_id"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20170216073235) do
     t.integer  "default_address_id"
     t.string   "cellphone"
     t.boolean  "is_admin",                        default: false
+    t.integer  "manage_id"
     t.index ["activation_token"], name: "index_users_on_activation_token", using: :btree
     t.index ["cellphone"], name: "index_users_on_cellphone", using: :btree
     t.index ["email"], name: "index_users_on_email", using: :btree

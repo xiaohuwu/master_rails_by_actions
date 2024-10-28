@@ -3,6 +3,9 @@ class User < ApplicationRecord
 
   attr_accessor :password, :password_confirmation, :token
 
+  belongs_to :boss, class_name: :User, foreign_key: :manage_id
+  has_many :staffs, class_name: :User, foreign_key: :manage_id
+
   CELLPHONE_RE = /\A(\+86|86)?1\d{10}\z/
   EMAIL_RE = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/
 
