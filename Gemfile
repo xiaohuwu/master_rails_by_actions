@@ -39,6 +39,7 @@ gem 'paperclip', '~> 5.2.0'
 gem 'mimemagic', '~> 0.3.10'
 gem 'ffi', '~> 1.9', '>= 1.9.24'
 gem 'puma'
+gem 'spreadsheet'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
